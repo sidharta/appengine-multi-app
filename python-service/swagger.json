@@ -1,0 +1,53 @@
+{
+    "info": {
+        "version": "1.0", 
+        "description": "A sample API", 
+        "title": "Sample API"
+    }, 
+    "paths": {
+        "/hello/{name}": {
+            "parameters": [
+                {
+                    "required": true, 
+                    "type": "string", 
+                    "description": "Name for hello", 
+                    "in": "path", 
+                    "name": "name"
+                }
+            ], 
+            "get": {
+                "tags": [
+                    "default"
+                ], 
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }, 
+                "operationId": "get_my_resource"
+            }
+        }
+    }, 
+    "responses": {
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }, 
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        }
+    }, 
+    "tags": [
+        {
+            "name": "default", 
+            "description": "Default namespace"
+        }
+    ], 
+    "basePath": "/", 
+    "produces": [
+        "application/json"
+    ], 
+    "swagger": "2.0", 
+    "consumes": [
+        "application/json"
+    ]
+}

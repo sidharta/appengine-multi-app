@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Spring REST Sample with Swagger",
+    "version": "2.0",
+    "title": "Spring REST Sample with Swagger",
+    "termsOfService": "http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm?Open",
+    "contact": {
+      "name": "Niklas Heidloff"
+    },
+    "license": {
+      "name": "Apache License Version 2.0",
+      "url": "https://github.com/IBM-Bluemix/news-aggregator/blob/master/LICENSE"
+    }
+  },
+  "host": "java-service-dot-multi-module-app.appspot.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "main-controller",
+      "description": "Main Controller"
+    }
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "tags": [
+          "main-controller"
+        ],
+        "summary": "get",
+        "operationId": "hello",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "User's name",
+            "required": false,
+            "type": "string",
+            "default": "World"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Failure"
+          }
+        }
+      }
+    }
+  }
+}

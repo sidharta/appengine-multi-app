@@ -7,7 +7,7 @@ api = Api(app, version='1.0', title='Sample API', description='A sample API')
 
 def initialize_app(flask_app):
     flask_app.config['SERVER_NAME'] = 'localhost:5000'
-    blueprint = Blueprint('api', __name__, url_prefix='/api')
+    blueprint = Blueprint('api', __name__, url_prefix='/')
     api.init_app(blueprint)
     flask_app.register_blueprint(blueprint)
 

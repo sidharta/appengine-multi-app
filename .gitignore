@@ -186,3 +186,8 @@ node
 *.api
 
 /deploy.sh
+
+## Python libs and compilation files
+**/lib
+**/*.pyc
+

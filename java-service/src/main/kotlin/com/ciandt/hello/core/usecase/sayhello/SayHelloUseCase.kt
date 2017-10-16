@@ -5,11 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired
 
 class SayHelloUseCase {
 
+    var gw: GetRealNameToHello
+
     @Autowired
-    val gw : GetRealNameToHello? = null
+    constructor(gw: GetRealNameToHello) {
+        this.gw = gw
+    }
 
     fun sayHello(name: String): HelloMessage {
-        val realName = gw!!.getRealNameToHello(name = name)
+        val realName = gw.getRealNameToHello(name = name)
         return HelloMessage(message = "Hello $realName!")
     }
 }

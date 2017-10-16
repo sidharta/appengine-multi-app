@@ -13,12 +13,12 @@ import org.springframework.context.annotation.Configuration
 class BeanConfiguration {
 
     @Bean
-    fun getRealNameGateway() : GetRealNameToHello {
+    fun getRealNameGateway(): GetRealNameToHello {
         return RealNameInMemoryGateway()
     }
 
     @Bean
-    fun getSayHelloUseCase() : SayHelloUseCase {
-        return SayHelloUseCase()
+    fun getSayHelloUseCase(): SayHelloUseCase {
+        return SayHelloUseCase(getRealNameGateway())
     }
 }
